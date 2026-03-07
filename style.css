@@ -1,0 +1,399 @@
+/* ============================================
+   Academic Personal Website - Styles
+   Clean, minimal, reference-inspired design
+   ============================================ */
+
+/* CSS Variables for easy theming */
+:root {
+    --color-text: #1a1a1a;
+    --color-text-muted: #4a4a4a;
+    --color-accent: #0066cc;
+    --color-accent-hover: #004499;
+    --color-border: #e0e0e0;
+    --color-bg: #ffffff;
+    --color-bg-alt: #f8f9fa;
+    --color-page-bg: #f2f3f5;
+    --color-block-bg: #ffffff;
+    --block-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    --block-radius: 8px;
+    --font-serif: 'Source Serif 4', Georgia, serif;
+    --font-sans: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
+    --max-width: 1000px;
+    --spacing-unit: 1.5rem;
+}
+
+/* Reset & Base */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-sans);
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--color-text);
+    background-color: var(--color-page-bg);
+    /* Optional: add a personalized background image; content blocks and header stay white on top:
+       background-image: url('assets/your-bg.jpg');
+       background-size: cover;
+       background-attachment: fixed; */
+}
+
+/* Typography */
+h1, h2, h3 {
+    font-family: var(--font-serif);
+    font-weight: 600;
+}
+
+h1 {
+    font-size: 2rem;
+    margin: 0 0 0.25rem 0;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin: 2.5rem 0 1rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--color-border);
+}
+
+h3 {
+    font-size: 1.125rem;
+    margin: 1.5rem 0 0.75rem 0;
+}
+
+p {
+    margin: 0 0 1rem 0;
+}
+
+a {
+    color: var(--color-accent);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--color-accent-hover);
+    text-decoration: underline;
+}
+
+/* Header */
+.header {
+    position: sticky;
+    top: 0;
+    background: var(--color-bg);
+    border-bottom: 1px solid var(--color-border);
+    z-index: 100;
+}
+
+.header-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: var(--spacing-unit) 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-logo {
+    font-family: var(--font-serif);
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: var(--color-text);
+}
+
+.header-logo:hover {
+    color: var(--color-accent);
+    text-decoration: none;
+}
+
+.header-nav {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.header-nav a {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--color-text-muted);
+}
+
+.header-nav a:hover {
+    color: var(--color-accent);
+}
+
+/* Main Content */
+.main-content {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 2rem 1.5rem 3rem;
+}
+
+/* Explicit block frame – keeps content readable over any page background */
+.block-frame {
+    background-color: var(--color-block-bg);
+    border-radius: var(--block-radius);
+    box-shadow: var(--block-shadow);
+    padding: 1.25rem 1.5rem;
+}
+
+/* Profile Block: Photo left, content right */
+.profile-block {
+    margin-bottom: 1rem;
+}
+
+
+.profile-layout {
+    display: flex;
+    gap: 2.5rem;
+    align-items: flex-start;
+}
+
+.profile-photo {
+    flex-shrink: 0;
+    width: 220px;
+}
+
+.profile-photo img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+    background: var(--color-bg-alt);
+}
+
+.photo-caption {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    margin: 0.5rem 0 0 0;
+}
+
+.profile-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.profile-title {
+    color: var(--color-text-muted);
+    font-size: 1rem;
+    margin: 0 0 0.25rem 0;
+}
+
+.profile-degree {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    margin: 0 0 1rem 0;
+}
+
+.profile-intro p {
+    max-width: 80ch;
+    margin: 0 0 0.55rem 0;
+    line-height: 1.5;
+}
+
+/* Profile links - inline icons like reference image */
+.profile-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 1.5rem;
+    margin-top: 1rem;
+}
+
+.profile-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+}
+
+.profile-link:hover {
+    color: var(--color-accent);
+}
+
+.profile-link .icon {
+    flex-shrink: 0;
+}
+
+/* Section blocks – each is a separate framed card; tighter spacing between blocks */
+.section {
+    margin-bottom: 1rem;
+}
+
+.section:last-child {
+    margin-bottom: 0;
+}
+
+.section.block-frame h2:first-child {
+    margin-top: 0;
+}
+
+.section-content ul {
+    margin: 0.5rem 0 1rem 0;
+    padding-left: 1.5rem;
+}
+
+.section-content li {
+    margin-bottom: 0.5rem;
+}
+
+/* News list */
+.news-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.news-list li {
+    margin-bottom: 0.75rem;
+}
+
+/* Reusable entry layout (Education, Experience) */
+.entry-item {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    margin-bottom: 0.5rem;
+}
+
+.entry-item:last-child {
+    margin-bottom: 0;
+}
+
+.entry-logo {
+    width: 1.25em;
+    height: 1.25em;
+    flex-shrink: 0;
+    margin-top: 0.15em;
+    object-fit: contain;
+}
+
+.entry-body {
+    flex: 1;
+    min-width: 0;
+}
+
+.entry-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+}
+
+.entry-name {
+    font-weight: 500;
+}
+
+.entry-date {
+    flex-shrink: 0;
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    white-space: nowrap;
+}
+
+.entry-detail {
+    margin: 0.2rem 0 0 0;
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+}
+
+/* Awards list */
+.awards-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.awards-list li {
+    margin-bottom: 0.5rem;
+}
+
+/* Publications */
+.publications-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.publication-item {
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.publication-item:last-child {
+    border-bottom: none;
+}
+
+.pub-authors {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    margin-bottom: 0.25rem;
+}
+
+.pub-title {
+    font-family: var(--font-serif);
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.pub-venue {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    margin-bottom: 0.5rem;
+}
+
+.pub-links {
+    font-size: 0.9rem;
+}
+
+.pub-links a {
+    margin-right: 1rem;
+}
+
+/* Footer */
+.footer {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    border-top: 1px solid var(--color-border);
+    text-align: center;
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+}
+
+.name-row {
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+}
+
+.name-email {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .profile-layout {
+        flex-direction: column;
+    }
+
+    .profile-photo {
+        width: 180px;
+    }
+
+    .profile-links {
+        gap: 0.75rem 1rem;
+    }
+
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    .main-content {
+        padding: 1.5rem 1rem 2rem;
+    }
+}
