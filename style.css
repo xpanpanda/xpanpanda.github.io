@@ -333,6 +333,11 @@ a:hover {
     margin-bottom: 0.25rem;
 }
 
+.pub-authors strong {
+    font-weight: 700;
+    color: var(--color-text);
+}
+
 .pub-title {
     font-family: var(--font-serif);
     font-weight: 600;
